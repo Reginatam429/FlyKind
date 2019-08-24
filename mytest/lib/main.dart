@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mytest/rainforest.dart';
 
 void main() => runApp(MyApp());
 
@@ -49,7 +50,8 @@ class ListItemWidget extends State<SwipeList> {
             child: InkWell(
               splashColor: Colors.blue.withAlpha(30),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => SecondScreen()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SecondScreen()));
               },
               child: Container(
                 width: 350,
@@ -66,9 +68,9 @@ class ListItemWidget extends State<SwipeList> {
                 ),
                 child: Text("RAIN FOREST",
                     style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 40)
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 40)
                 ),
                 alignment: Alignment.center,
 
@@ -80,7 +82,6 @@ class ListItemWidget extends State<SwipeList> {
               splashColor: Colors.blue.withAlpha(30),
               onTap: () {
                 print('Card tapped.');
-
               },
               child: Container(
                 width: 350,
@@ -137,43 +138,5 @@ class ListItemWidget extends State<SwipeList> {
         ],
       ),
     );
-  }
-
-}
-
-
-//Rainforest Second Screen
-class SecondScreen extends StatelessWidget {
-
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Rain Forest',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Rain Forest'),
-          backgroundColor: Colors.teal,
-        ),
-        body: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/rain.gif"),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Text("Just Breathe",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 40)
-          ),
-          alignment: Alignment.center,
-
-        ),
-        ),
-      ),
-    );
-  }
   }
 }
